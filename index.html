@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sign-up Form</title>
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-up Form</title>
+  </head>
 
-    <body>
-
-    </body>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="logo"><img src="./assets/img/odin-lined.png" alt="Odin Logo" height="508" width="380">ODIN
+        </div>
+        <p>Photo by <a
+            href="https://unsplash.com/@normals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Point
+            Normal</a> on <a
+            href="https://unsplash.com/photos/a-stack-of-round-discs-on-a-red-and-pink-background-X-yZGPT15SI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </p>
+      </div>
+      <div class="main-content">
+        <div class="cta">
+          <p>
+            This is not a real online service! You know you need something like this in your life to help you realize
+            your deepest dreams.<br>
+            Sign up <span class="italic">now</span> to get started.
+          </p>
+          <p>You <em>know</em> you want to.</p>
+        </div>
+        <div class="form">
+          <form action="">
+            <p>Let's do this!</p>
+            <div class="form-container">
+              <div class="form-grp">
+                <label for="first-name">First Name *</label><br>
+                <input type="text" id="first-name" name="firstName" required><br>
+                <span></span>
+              </div>
+              <div class="form-grp">
+                <label for="last-name">Last Name *</label><br>
+                <input type="text" id="last-name" name="lastName" required><br>
+                <span></span>
+              </div>
+              <div class="form-grp">
+                <label for="email">Email *</label><br>
+                <input type="email" id="email" name="email" required>
+                <div></div>
+              </div>
+              <div class="form-grp">
+                <label for="phone">Phone Number</label><br>
+                <input type="tel" id="phone" name="phone"><br>
+                <span></span>
+              </div>
+              <div class="form-grp">
+                <label for="password1">Password *</label><br>
+                <input type="password" id="password1" name="password1" required><br>
+                <span></span>
+              </div>
+              <div class="form-grp">
+                <label for="password2">Confirm Password *</label><br>
+                <input type="password" id="password2" name="password2" required><br>
+                <span></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="main-content__footer">
+          <button><span>Create Account</span></button>
+          <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
 
 </html>

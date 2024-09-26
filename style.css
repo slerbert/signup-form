@@ -1,0 +1,284 @@
+:root {
+    --ratio: 1.5;
+    --s-5: calc(var(--s-4) / var(--ratio));
+    --s-4: calc(var(--s-3) / var(--ratio));
+    --s-3: calc(var(--s-2) / var(--ratio));
+    --s-2: calc(var(--s-1) / var(--ratio));
+    --s-1: calc(var(--s0) / var(--ratio));
+    --s0: 1rem;
+    --s1: calc(var(--s0) * var(--ratio));
+    --s2: calc(var(--s1) * var(--ratio));
+    --s3: calc(var(--s2) * var(--ratio));
+    --s4: calc(var(--s3) * var(--ratio));
+    --s5: calc(var(--s4) * var(--ratio));
+
+    --fw-regular: 400;
+    --fw-bold: 500;
+
+    --ff-base: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+
+    --clr-light: hsl(0, 0%, 100%);
+    --clr-grey-100: hsl(0, 0%, 95%);
+    --clr-grey-500: hsl(0, 0%, 80%);
+    --clr-grey-900: hsl(0, 0%, 40%);
+    --clr-dark: hsl(0, 0%, 27%);
+    --clr-primary: hsl(342, 89%, 48%);
+    --clr-secondary: hsl(266, 69%, 10%);
+    --clr-accent: hsl(13, 100%, 66%);
+    --clr-error: hsl(355, 84%, 55%);
+}
+
+/* css reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+}
+
+
+.wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+.sidebar {
+    position: relative;
+    flex-basis: 35%;
+    background-image: url(./assets/img/point-normal-X-yZGPT15SI-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    color: var(--clr-light);
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    padding: var(--s1);
+    background-color: rgba(0,0,0,.7);
+    font-size: var(--s4);
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.sidebar a {
+    color: var(--clr-light);
+}
+
+.logo a:visited {
+    color: var(--clr-light);
+}
+
+.sidebar p {
+    margin-top: auto;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.main-content > * {
+    flex: 1;
+    background-color: var(--clr-grey-100);
+    padding: 0 var(--s5) 0 var(--s3);
+}
+
+.main-content a {
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+}
+
+.cta {
+    font-size: var(--s1);
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    padding-top: var(--s4);
+    padding-bottom: var(--s3);
+    color: var(--clr-secondary);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.form {
+    background-color: var(--clr-light);
+    padding-bottom: var(--s2);
+}
+
+.form p {
+    font-weight: var(--fw-bold);
+    font-size: var(--s1);
+    margin: var(--s0) 0;
+    color: var(--clr-primary);
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: var(--s0);
+}
+
+.form-grp {
+    margin-right: var(--s1);
+}
+
+.form-grp > label {
+    font-size: small;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    color: var(--clr-grey-900);
+    letter-spacing: 0.1rem;
+}
+
+input {
+    border: 1px solid var(--clr-grey-500);
+    border-radius: var(--s-4);
+    padding: var(--s-2);
+}
+
+input:focus {
+    outline: 1px solid var(--clr-accent);
+    box-shadow: 0 0 4px 1px var(--clr-accent);
+}
+
+input:user-invalid {
+    outline: 1px solid var(--clr-error);
+}
+
+input:user-invalid + div::before {
+    content: '✖ WHAT THE FUCK';
+    font-size: var(--s-1);
+    color: var(--clr-error);
+    margin: 0px;
+}
+
+.main-content__footer {
+    padding-top: var(--s2);
+    padding-bottom: var(--s3);
+    box-shadow: 0 5px 5px inset var(--clr-grey-500);
+}
+
+button {
+    padding: 1em 3em;
+    font-weight: 900;
+    cursor: pointer;
+    color: var(--clr-primary);
+    border-radius: var(--s-1);
+    border: 4px solid transparent;
+    outline: none;
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(220deg,#511579, #e80d4d, #ec6840, #e80d4d, #511579), border-box;
+
+    animation: GradientAnimation 3s ease infinite;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: .25s;
+}
+
+@keyframes GradientAnimation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--clr-primary);
+    transform: translateY(-0.25em);  
+}
+
+button:active {
+    box-shadow: 0 0.5em 0.5em -0.4em rgba(0,0,0,.2) inset;
+    transform: translateY(0em);
+}
