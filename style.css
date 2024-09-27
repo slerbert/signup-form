@@ -138,8 +138,11 @@ body {
     top: 20%;
     width: 100%;
     padding: var(--s1);
-    background-color: rgba(0,0,0,.7);
+    background-color: var(--clr-secondary);
+    opacity: 70%;
+    box-shadow: 0 8px 6px -2px var(--clr-secondary), 0 -8px 6px -2px var(--clr-secondary);
     font-size: var(--s4);
+    font-family: Montserrat, sans-serif;
 }
 
 .logo img {
