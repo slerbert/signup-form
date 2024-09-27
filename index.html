@@ -11,7 +11,8 @@
   <body>
     <div class="wrapper">
       <div class="sidebar">
-        <div class="logo"><img src="./assets/img/odin-lined.png" alt="Odin Logo" height="508" width="380">ODIN
+        <div class="logo">
+          <img src="./assets/img/odin-lined.png" alt="Odin Logo" height="508" width="380">ODIN
         </div>
         <p>Photo by <a
             href="https://unsplash.com/@normals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Point
@@ -28,8 +29,8 @@
           </p>
           <p>You <em>know</em> you want to.</p>
         </div>
-        <div class="form">
-          <form action="">
+        <div class="form" id="create-account">
+          <form action="#">
             <p>Let's do this!</p>
             <div class="form-container">
               <div class="form-grp">
@@ -44,29 +45,35 @@
               </div>
               <div class="form-grp">
                 <label for="email">Email *</label><br>
-                <input type="email" id="email" name="email" required>
-                <div></div>
+                <input type="email" id="email" name="email"
+                  title="Please enter your email address, e.g. example@gmail.com" required>
               </div>
               <div class="form-grp">
                 <label for="phone">Phone Number</label><br>
-                <input type="tel" id="phone" name="phone"><br>
-                <span></span>
+                <!-- Regex for telephone numbers all over the world -->
+                <!-- https://regex101.com/library/wZ4uU6?orderBy=RELEVANCE&search=phone -->
+                <input type="tel" id="phone" name="phone" title="Please enter your phone number."
+                  pattern="(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})"><br>
               </div>
               <div class="form-grp">
                 <label for="password1">Password *</label><br>
-                <input type="password" id="password1" name="password1" required><br>
-                <span></span>
+                <input type="password" id="password1" name="password1"
+                  pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$"
+                  title="Password must: be between 8 and 16 characters, include at least one digit, include at least one lowercase character, and include at least one uppercase letter."
+                  required><br>
               </div>
               <div class="form-grp">
                 <label for="password2">Confirm Password *</label><br>
-                <input type="password" id="password2" name="password2" required><br>
-                <span></span>
+                <input type="password" id="password2" name="password2"
+                  pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,16}$"
+                  title="Password must: be between 8 and 16 characters, include at least one digit, include at least one lowercase character, and include at least one uppercase letter."
+                  required><br>
               </div>
             </div>
           </form>
         </div>
-        <div class="main-content__footer">
-          <button><span>Create Account</span></button>
+        <div class="form__footer">
+          <button type="submit" form="create-account"><span>Create Account</span></button>
           <p>Already have an account? <a href="#">Log in</a></p>
         </div>
       </div>
